@@ -24,8 +24,8 @@ angular.module('LfApp', ['ngRoute','AdalAngular'])
 		{
             instance: 'https://login.microsoftonline.com/', 
             tenant: 'together.at',
-			//clientId: '84a30349-7c6d-42fc-a92e-fa7b774f66e9',
-			clientId: '8307d66e-184f-437f-af73-88729009b293',
+			clientId: '84a30349-7c6d-42fc-a92e-fa7b774f66e9',
+			//clientId: '8307d66e-184f-437f-af73-88729009b293', me
 			//clientId: 'ca9d6d1c-5a98-4e34-98b5-89d2e179a01f',
 			//clientId: 'c34b49f1-2cd5-400f-83c2-37f6efa9c63b', tun
             extraQueryParameter: 'nux=1',
