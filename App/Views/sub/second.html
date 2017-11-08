@@ -1,0 +1,51 @@
+<div id="cdntoken">
+
+	<!-- <img src="https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg"/> -->
+	<script type='text/javascript'>
+	
+		var userToken = angular.element(document.getElementById('cdntoken')).scope().getTokenHome();
+		console.log('User token = '+userToken);
+		
+		if(userToken != null && userToken != ''){
+			//var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
+			var callURL = 'https://porjed-tst-fnc.azurewebsites.net/api/cdntoken';
+			
+			getCDNToken(callURL,userToken).success(function(data){
+				console.log('Function .success');
+				/*var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
+				
+				var cdntokenDIV = document.getElementById('cdntoken');
+				var elem = document.createElement("img");
+				elem.setAttribute("src",cdnURL);
+				cdntokenDIV.appendChild(elem);*/
+			});
+		   
+		   function getCDNToken (callURL,userToken){
+				return $.ajax({
+				url: callURL,
+				beforeSend: function(xhrObj){
+					//Request headers
+					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
+				},
+				type: "GET",
+				success: function (data, textStatus, jqXHR){
+					console.log('CDNToken = '+data);
+				},
+				error: function(xhr, textStatus, errorThrown, response, status, error) { 
+					console.log('getCDNToken Error!!');
+				},
+				});
+			}
+		}else{
+			console.log("User doesn't log-in!!");
+			
+			var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg';
+			var cdntokenDIV = document.getElementById('cdntoken');
+			var elem = document.createElement("iframe");
+			elem.setAttribute("src",cdnURL);
+			elem.frameBorder = 0;
+			cdntokenDIV.appendChild(elem);
+		}
+		
+	</script>
+</div>
