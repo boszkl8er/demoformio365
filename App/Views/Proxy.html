@@ -3,48 +3,25 @@
 	
 	<script type='text/javascript'>
 
-		//var mainURL = 'https://projed-dev-fnc.azurewebsites.net/calc/subtract/200/20';
-		var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/50';
+		//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/50';
 		
 		//----------- 1
 		/*var proxyIframe = document.getElementById("proxyIframe");
 		proxyIframe.src = mainURL;*/
 		
+		//---------------- Load Iframe ------------------
+		var mainURL = 'https://prod-08.southcentralus.logic.azure.com/workflows/d477d861d3724a4e84f84f09b38759cc/triggers/manual/paths/invoke/calc/a/200/b/10?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_RnUBhOPbe0ffytYkGTVVCYX5aNkIuJyVk0jVa0oFZY';
+		
+		var proxyIframe = document.getElementById("proxyIframe");
+		proxyIframe.src = mainURL;
+		
+		
+		
 		//user token
 		var userToken = angular.element(document.getElementById('proxyID')).scope().getTokenHome();
 		console.log('User token = '+userToken);
 		
-		//------------------ debug1 -----------------
-		/*$.ajax({
-			url: 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/50',
-			dataType: 'GET',
-			beforeSend: function(xhrObj){
-				console.log('before send working');
-				xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
-			},
-			complete : function(){
-				console.log('complete working');
-				alert(this.url)
-			},
-			success: function (data, textStatus, jqXHR){
-				console.log('success working');
-				console.log('data = '+data);
-				console.log('data value = '+data.value);
-				console.log('data text = '+data.text);
-				console.log('textStatus = '+textStatur);
-				console.log('jqXHR = '+jqXHR);
-			},
-			error: function(xhr, textStatus, errorThrown, response, status, error) { 
-					console.log('getCDNToken Error!!');
-					console.log('xhr = '+xhr);
-					console.log('textStatus = '+textStatus);
-					console.log('errorThrown = '+errorThrown);
-					console.log('response = '+response);
-					console.log('status = '+status);
-					console.log('error = '+error);
-			},
-		});*/
-		testAjaxFunction(mainURL,userToken).success(function(data){
+		/*testAjaxFunction(mainURL,userToken).success(function(data){
 				//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
 				console.log('data = '+data);
@@ -80,7 +57,7 @@
 					console.log('error = '+error);
 				},
 				});
-			}
+			}*/
 	</script>
 	
 	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
