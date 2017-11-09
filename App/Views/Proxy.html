@@ -20,7 +20,7 @@
 		var userToken = angular.element(document.getElementById('proxyID')).scope().getTokenHome();
 		console.log('User token = '+userToken);
 		
-		var xhr = createCORRequest('GET',mainURL);
+		var xhr = createCORSRequest('GET',mainURL);
 		xhr.setRequestHeader ("Authorization", "Bearer " + userToken);
 		xhr.setRequestHeader ("Access-Control-Allow-Origin","*");
 		xhr.setRequestHeader ("Access-Control-Allow-Credentials",true);
