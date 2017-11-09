@@ -31,7 +31,7 @@
 		//===============================================
 		//---------------- Json working -----------------
 		//===============================================
-		testAjaxFunction(mainURL,userToken).success(function(data){
+		/*testAjaxFunction(mainURL,userToken).success(function(data){
 				//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
 				console.log('data = '+data);
@@ -44,15 +44,6 @@
 		 function testAjaxFunction (mainURL,userToken){
 				return $.ajax({
 				url: mainURL,
-				/*beforeSend: function(xhrObj){
-					//Request headers
-					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
-					xhrObj.setRequestHeader ("Access-Control-Allow-Origin","*");
-					xhrObj.setRequestHeader ("Access-Control-Allow-Methods","GET");
-					xhrObj.setRequestHeader ("Access-Control-Allow-Headers","Origin","Content-Type","X-Auth-Token");
-					xhrObj.setRequestHeader ("Access-Control-Allow-Credentials",true);
-					//xhrObj.setRequestHeader ("Authorization", "");
-				},*/
 				headers:{
 					'Authorization':'Bearer '+userToken,
 					'Access-Control-Allow-Origin':'*',
@@ -76,8 +67,22 @@
 					console.log('error = '+error);
 				},
 				});
-			}
+			}*/
 			//=========================================
+			var settings = {
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "https://calcproxyfunction.azurewebsites.net/calcProxy/200/20",
+			  "method": "GET",
+			  "headers": {
+				"cache-control": "no-cache",
+				"postman-token": "d681b3c2-60bf-f585-cb02-98337b6b6c7a"
+			  }
+			}
+
+			$.ajax(settings).done(function (response) {
+			  console.log(response);
+			});
 	</script>
 	
 	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
