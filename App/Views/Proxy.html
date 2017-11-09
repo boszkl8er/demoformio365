@@ -37,12 +37,17 @@
 		 function testAjaxFunction (mainURL,userToken){
 				return $.ajax({
 				url: mainURL,
-				beforeSend: function(xhrObj){
+				/*beforeSend: function(xhrObj){
 					//Request headers
 					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
 					xhrObj.setRequestHeader ("Access-Control-Allow-Origin","*");
 					xhrObj.setRequestHeader ("Access-Control-Allow-Credentials",true);
 					//xhrObj.setRequestHeader ("Authorization", "");
+				},*/
+				headers:{
+					'Authorization':'Bearer '+userToken,
+					'Access-Control-Allow-Origin':'*',
+					'Access-Control-Allow-Credentials':true,
 				},
 				type: "GET",
 				success: function (data, textStatus, jqXHR){
