@@ -20,11 +20,17 @@
 		var userToken = angular.element(document.getElementById('proxyID')).scope().getTokenHome();
 		console.log('User token = '+userToken);
 		
+		var xhr = createCORRequest('GET',mainURL);
+		xhr.setRequestHeader ("Authorization", "Bearer " + userToken);
+		xhr.setRequestHeader ("Access-Control-Allow-Origin","*");
+		xhr.setRequestHeader ("Access-Control-Allow-Credentials",true);
+		xhr.send();
+		
 		
 		//===============================================
 		//---------------- Json working -----------------
 		//===============================================
-		testAjaxFunction(mainURL,userToken).success(function(data){
+		/*testAjaxFunction(mainURL,userToken).success(function(data){
 				//var mainURL = 'https://sukanya-tst-functionapp-demoproxy.azurewebsites.net/calc/100/20';
 				
 				console.log('data = '+data);
@@ -37,17 +43,12 @@
 		 function testAjaxFunction (mainURL,userToken){
 				return $.ajax({
 				url: mainURL,
-				/*beforeSend: function(xhrObj){
+				beforeSend: function(xhrObj){
 					//Request headers
 					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
 					xhrObj.setRequestHeader ("Access-Control-Allow-Origin","*");
 					xhrObj.setRequestHeader ("Access-Control-Allow-Credentials",true);
 					//xhrObj.setRequestHeader ("Authorization", "");
-				},*/
-				headers:{
-					//Authorization':'Bearer '+userToken,
-					'Access-Control-Allow-Origin':'*',
-					'Access-Control-Allow-Credentials':true,
 				},
 				type: "GET",
 				success: function (data, textStatus, jqXHR){
@@ -67,7 +68,7 @@
 					console.log('error = '+error);
 				},
 				});
-			}
+			}*/
 			//=========================================
 	</script>
 	
