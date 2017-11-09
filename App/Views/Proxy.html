@@ -9,11 +9,14 @@
 		/*var proxyIframe = document.getElementById("proxyIframe");
 		proxyIframe.src = mainURL;*/
 		
-		//---------------- Load Iframe ------------------
-		var mainURL = 'https://prod-08.southcentralus.logic.azure.com/workflows/d477d861d3724a4e84f84f09b38759cc/triggers/manual/paths/invoke/calc/a/200/b/10?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_RnUBhOPbe0ffytYkGTVVCYX5aNkIuJyVk0jVa0oFZY';
 		
+		
+		//---------------- Load Iframe ------------------
+		var calcProxyFunct = 'https://calcproxyfunction.azurewebsites.net/calcProxy/2000/20';
+		var calcLogicApp = 'https://prod-08.southcentralus.logic.azure.com/workflows/d477d861d3724a4e84f84f09b38759cc/triggers/manual/paths/invoke/calc/a/10/b/2?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_RnUBhOPbe0ffytYkGTVVCYX5aNkIuJyVk0jVa0oFZY';
+	
 		var proxyIframe = document.getElementById("proxyIframe");
-		proxyIframe.src = mainURL;
+		proxyIframe.src = calcProxyFunct;
 		
 		
 		
