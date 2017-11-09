@@ -40,6 +40,8 @@
 				beforeSend: function(xhrObj){
 					//Request headers
 					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
+					xhrObj.setRequestHeader ("Access-Control-Allow-Origin","*");
+					xhrObj.setRequestHeader ("Access-Control-Allow-Credentials",true);
 					//xhrObj.setRequestHeader ("Authorization", "");
 				},
 				type: "GET",
