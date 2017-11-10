@@ -11,8 +11,8 @@
 	
 		//var mainURL = 'https://jpetchan-cdn-token.azurewebsites.net/api/cdntoken2';
 		var mainURL = calcProxyFunct;
-		//var proxyIframe = document.getElementById("proxyIframe");
-		//proxyIframe.src = mainURL;
+		var proxyIframe = document.getElementById("proxyIframe");
+		proxyIframe.src = mainURL;
 		
 		//===============================================
 		
@@ -69,7 +69,7 @@
 				});
 			}*/
 			//=========================================
-			alert('Update now2 ');
+			/*alert('Update now2 ');
 			var settings = {
 			  "async": true,
 			  "crossDomain": true,
@@ -84,7 +84,7 @@
 
 			$.ajax(settings).done(function (response) {
 			  console.log(response);
-			});
+			});*/
 	</script>
 	
 	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
