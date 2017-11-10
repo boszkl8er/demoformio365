@@ -69,7 +69,9 @@
 				});
 			}*/
 			//=========================================
-			alert('Update now2 ');
+			//               Post man
+			//=========================================
+			/*alert('Post man');
 			var settings = {
 			  "async": true,
 			  "crossDomain": true,
@@ -84,7 +86,37 @@
 
 			$.ajax(settings).done(function (response) {
 			  console.log(response);
-			});
+			});*/
+			
+			//=========================================
+			//                Json Tun
+			//=========================================
+			var url = "https://calcproxyfunction.azurewebsites.net/calcProxy/200/20"
+            //var json = null;
+            var getsetting = {
+                'async': false,
+                'global': false,
+                'url': url,
+                "method": "GET",
+                "headers": {
+                    "cache-control": "no-cache",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+                    "Access-Control-Allow-Headers": "Origin, Content-Type, Authorization",
+                    "Authorization": "Bearer " + token
+                }
+            }
+            $.ajax(getsetting).done(function (data) {
+                console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> CDN DONE");
+                console.log(data);
+                //json = data.cdn;
+            }).fail(function (err){
+                console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> CDN FAILED");
+                console.log(err);
+            });
+           // return json;
+			
+			
 	</script>
 	
 	<iframe  id="proxyIframe" width="1025" height="350" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
