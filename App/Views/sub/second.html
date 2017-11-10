@@ -8,7 +8,8 @@
 		
 		if(userToken != null && userToken != ''){
 			//var cdnURL = 'https://tst-demo2-apimgts.azure-api.net/accesscdn/CDNToken?id_token='+userToken;
-			var callURL = 'https://porjed-tst-fnc.azurewebsites.net/api/cdntoken';
+			//var callURL = 'https://porjed-tst-fnc.azurewebsites.net/api/cdntoken';
+			var callURL = 'https://jpetchan-cdn-token.azurewebsites.net/api/cdntoken';
 			
 			getCDNToken(callURL,userToken).success(function(data){
 				console.log('Function .success');
