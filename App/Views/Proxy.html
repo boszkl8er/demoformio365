@@ -12,7 +12,7 @@
 		//var mainURL = 'https://jpetchan-cdn-token.azurewebsites.net/api/cdntoken2';
 		var mainURL = calcProxyFunct;
 		var proxyIframe = document.getElementById("proxyIframe");
-		//proxyIframe.src = mainURL; working
+		proxyIframe.src = mainURL; working
 		
 		//===============================================
 		
@@ -103,7 +103,7 @@
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
                     "Access-Control-Allow-Headers": "Origin, Content-Type, Authorization",
-                    //"Authorization": "Bearer " + userToken
+                    "Authorization": "Bearer " + userToken
                 }
             }
             $.ajax(getsetting).done(function (data) {
