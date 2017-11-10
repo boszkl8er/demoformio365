@@ -108,7 +108,8 @@
             }
             $.ajax(getsetting).done(function (data) {
                 console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> CDN DONE");
-                console.log(data);
+                console.log("data = "+data);
+				console.log("data value = "+data.value);
                 //json = data.cdn;
             }).fail(function (err){
                 console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> CDN FAILED");
