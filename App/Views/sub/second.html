@@ -24,9 +24,14 @@
 		   function getCDNToken (callURL,userToken){
 				return $.ajax({
 				url: callURL,
-				beforeSend: function(xhrObj){
+				/*: function(xhrObj){
 					//Request headers
 					xhrObj.setRequestHeader ("Authorization", "Bearer " + userToken);
+				},*/
+				headers:{
+					'Authorization':'Bearer '+userToken,
+					'Access-Control-Allow-Origin':'*',
+					'Access-Control-Allow-Methods':'GET',
 				},
 				type: "GET",
 				success: function (data, textStatus, jqXHR){
