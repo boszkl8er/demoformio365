@@ -12,7 +12,9 @@
 			var callURL = 'https://jpetchan-cdn-token.azurewebsites.net/api/cdntoken';
 			
 			getCDNToken(callURL,userToken).success(function(data){
-				console.log('Function .success');
+				console.log('success');
+				console.log('data = '+data);
+				console.log('data cdn = '+data.cdn);
 				/*var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
 				
 				var cdntokenDIV = document.getElementById('cdntoken');
