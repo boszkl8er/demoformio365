@@ -514,6 +514,7 @@ function $RouteProvider(){
               var locals = angular.extend({}, next.resolve),
                   template, templateUrl;
 
+				console.log('templateUrl = '+templateUrl);
               angular.forEach(locals, function(value, key) {
                 locals[key] = angular.isString(value) ?
                     $injector.get(value) : $injector.invoke(value);
