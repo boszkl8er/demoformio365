@@ -511,11 +511,12 @@ function $RouteProvider(){
         $q.when(next).
           then(function() {
 			  console.log('debug1');
+			  window.alert('window alert');
             if (next) {
               var locals = angular.extend({}, next.resolve),
                   template, templateUrl;
 
-				console.log('templateUrl = '+templateUrl);
+				console.log('debug templateUrl = '+templateUrl);
               angular.forEach(locals, function(value, key) {
                 locals[key] = angular.isString(value) ?
                     $injector.get(value) : $injector.invoke(value);
