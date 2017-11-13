@@ -234,6 +234,7 @@ function $RouteProvider(){
                '$templateCache',
                '$sce',
       function($rootScope, $location, $routeParams, $q, $injector, $http, $templateCache, $sce) {
+		  console.log('get function (angular-route.js)');
 
     /**
      * @ngdoc service
