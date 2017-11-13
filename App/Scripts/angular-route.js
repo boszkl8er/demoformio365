@@ -483,6 +483,8 @@ function $RouteProvider(){
     }
 
     function updateRoute() {
+		console.log('function updateRoute');
+		console.log('-------------------------------------------------------------');
       var next = parseRoute(),
           last = $route.current;
 
