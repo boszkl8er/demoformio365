@@ -510,6 +510,7 @@ function $RouteProvider(){
 
         $q.when(next).
           then(function() {
+			  console.log('------------------------ debug -------------------------------');
             if (next) {
               var locals = angular.extend({}, next.resolve),
                   template, templateUrl;
