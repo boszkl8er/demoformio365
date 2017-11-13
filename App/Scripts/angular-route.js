@@ -525,10 +525,14 @@ function $RouteProvider(){
                   template = template(next.params);
                 }
               } else if (angular.isDefined(templateUrl = next.templateUrl)) {
+				console.log('debug angular1');
+				console.log('-------------------------------------------------');
                 if (angular.isFunction(templateUrl)) {
                   templateUrl = templateUrl(next.params);
                 }
                 templateUrl = $sce.getTrustedResourceUrl(templateUrl);
+				console.log('debug angular2');
+				console.log('-------------------------------------------------');
                 if (angular.isDefined(templateUrl)) {
                   next.loadedTemplateUrl = templateUrl;
                   template = $http.get(templateUrl, {cache: $templateCache}).
