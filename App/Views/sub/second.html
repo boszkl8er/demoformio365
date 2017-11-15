@@ -15,6 +15,14 @@
 				console.log('success');
 				console.log('data = '+data);
 				console.log('data cdn = '+data.cdn);
+				
+				
+				/*var cdnURL = 'https://tst-demo2.azureedge.net/App/Views/sub/img/Bea1.jpg?cdn_token='+data;
+				
+				var cdntokenDIV = document.getElementById('cdntoken');
+				var elem = document.createElement("img");
+				elem.setAttribute("src",cdnURL);
+				cdntokenDIV.appendChild(elem);*/
 			});
 		   
 		   function getCDNToken (callURL,userToken){
