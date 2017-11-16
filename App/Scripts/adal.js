@@ -766,7 +766,6 @@ AuthenticationContext.prototype._getNavigateUrl = function (responseType, resour
 };
 
 AuthenticationContext.prototype._extractIdToken = function (encodedIdToken) {
-	console.log('encodedIdTokan = '+encodedIdToken + '\n');
 	
     // id token will be decoded to get the username
     var decodedToken = this._decodeJwt(encodedIdToken);
